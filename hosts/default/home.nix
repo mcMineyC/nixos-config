@@ -65,10 +65,10 @@
 
     scrollback.lines = 1000;
 
-    colors = with config.colorScheme.colors; {
+    colors = with config.colorScheme.pallette; {
       alpha = 1;
       foreground = "${base06}";
-      background = "${base06}";
+      background = "${base00}";
     };
 
     cursor = {
