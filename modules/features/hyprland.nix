@@ -6,7 +6,7 @@
     NIXOS_OZONE_WL = "1";
   };
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
     nvidia.modesetting.enable = true;
   };
   environment.systemPackages = with pkgs; [

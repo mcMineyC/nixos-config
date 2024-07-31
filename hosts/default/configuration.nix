@@ -112,7 +112,7 @@
   environment.systemPackages = with pkgs; [
     wget
     htop
-    nvtop
+    nvtopPackages.full
     git
     htop
     gparted

@@ -25,7 +25,7 @@
       echo "Now on generation $((currentGen + 1))"
       echo "Committing changes"
       git add .
-      git commit -m "Update on $(date), $((currentGen + 1))"
+      git commit -m "Update on $(date), gen $((currentGen + 1))"
       git push
       echo "Done"
       sudo nixos-rebuild switch --flake /home/jedi/Documents/nixos-config#default
