@@ -9,16 +9,16 @@
     opengl.enable = true;
     nvidia.modesetting.enable = true;
   };
-  environment.systemPackages = [
-    pkgs.waybar
-    (pkg.waybar.overrideAttrs (oldAttrs: {
+  environment.systemPackages = with pkgs; [
+    waybar
+    (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
       })
     )
-    pkgs.ags
+    ags
     swww
     foot
   ];
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }

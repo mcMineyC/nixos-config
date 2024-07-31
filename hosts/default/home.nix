@@ -12,9 +12,21 @@
 
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    (pkgs.writeShellScriptBin "sys-rebuild" ''
+      #!/bin/bash
+      if [ "$(pwd)" != "/home/jedi/Documents/nixos-config" ]; then
+        cd /home/jedi/Documents/nixos-config
+        echo "CDed to config dir"
+      fi
+      currentGen=$(nix-env --list-generations | grep current | awk '{print $1}')
+      echo "Now on generation $((currentGen + 1))"
+      echo "Committing changes"
+      git add .
+      git commit -m "Update on $(date), $((currentGen + 1))"
+      git push
+      echo "Done"
+      sudo nixos-rebuild switch --flake /home/jedi/Documents/nixos-config#default
+    '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
