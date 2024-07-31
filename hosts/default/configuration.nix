@@ -2,14 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./coding.nix
-      ./games.nix
+      ../../modules/features/coding/coding.nix
+      ../../modules/features/games.nix
+      ../../modules/features/hyprland.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -74,9 +76,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jedi = {
     isNormalUser = true;
@@ -96,6 +95,12 @@
       foot
     ];
   };
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "jedi" = import ./home.nix;
+    };
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -107,6 +112,7 @@
   environment.systemPackages = with pkgs; [
     wget
     htop
+    nvtop
     git
     htop
     gparted
@@ -132,23 +138,9 @@
     };
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   networking.firewall.enable = false;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
