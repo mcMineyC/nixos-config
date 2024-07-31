@@ -4,13 +4,16 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
   ];
+
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+
   home.username = "jedi";
   home.homeDirectory = "/home/jedi";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.packages = [
     pkgs.hello
 
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     (pkgs.writeShellScriptBin "sys-rebuild" ''
       #!/bin/bash
@@ -42,28 +45,44 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    # ".config/home-manager/home.nix".source = ./home.nix;
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/jedi/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
     # EDITOR = "emacs";
     EDITOR = "nvim";
+  };
+
+  programs.foot.settings = {
+    main = {
+      term = "xterm-256color";
+
+      font = "JetBrainsMono Nerd Font:size=11";
+      dpi-aware = "no";
+      pad = "0x0";
+      bold-text-in-bright = "no";
+    };
+
+    scrollback.lines = 1000;
+
+    cursor = {
+      style = "beam";
+      blink = "no";
+      beam-thickness = 1.5;
+    };
+
+    key-bindings = {
+      scrollback-up-page = "Page_Up";
+      scrollback-down-page = "Page_Down";
+      clipboard-copy = "Control+Shift+C";
+      clipboard-paste = "Control+Shift+V";
+      search-start = "Control+Shift+F";
+    };
+
+    search-bindings = {
+      cancel = "Escape";
+      find-prev = "G";
+      find-next = "Shift+G";
+    };
   };
 
   wayland.windowManager.hyprland = {
@@ -74,6 +93,7 @@
     bind =
       [
         "$mod, F, exec, firefox"
+        "$mod, T, exec, foot"
         ", Print, exec, grimblast copy area"
       ]
       ++ (
