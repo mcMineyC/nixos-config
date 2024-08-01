@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.media-controls
+    gnome.gnome-tweaks
   ];
   
   # Enable the X11 windowing system.
