@@ -3,10 +3,6 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-      ../../modules/features/coding/coding.nix
-      ../../modules/features/games.nix
-      ../../modules/desktops/hyprland/hyprland.nix
-      ../../modules/desktops/gnome/gnome.nix
       ../../modules/features/alacritty.nix
   ];
 

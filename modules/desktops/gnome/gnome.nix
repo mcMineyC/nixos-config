@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 
 {
+  pkgs.orchis-theme = pkgs.orchis-theme.override { tweaks = "macos dark"; };
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.media-controls
@@ -27,5 +28,5 @@
       "org.gnome.Extensions"
     ];
   };
-  
+
 }
