@@ -5,6 +5,8 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.media-controls
     gnome-tweaks
+    gtk-engine-murrine
+    orchis-theme
   ];
   
   # Enable the X11 windowing system.
