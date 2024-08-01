@@ -47,6 +47,10 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/neovim" = {
+      source = inputs.nvim-config;
+      recursive = true;
+    }
   };
 
   home.sessionVariables = {
