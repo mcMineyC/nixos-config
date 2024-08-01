@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  pkg.orchis-theme = (pkgs.orchis-theme.override ({ 
+  pkgs.orchis-theme = (pkgs.orchis-theme.override ({ 
       tweaks = ["macos" "black"];
   }));
   environment.systemPackages = with pkgs; [
