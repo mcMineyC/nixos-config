@@ -4,8 +4,10 @@
     gtk = {
         enable = true;
         theme = {
-            package = pkgs.orchis-theme;
-            name = "Orchis-Dark"
+            package = (pkgs.orchis-theme.override ({ 
+                        tweaks = ["macos" "black"];
+                    }));
+            name = "Orchis-Dark";
         };
     };
 }

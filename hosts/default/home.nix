@@ -3,7 +3,8 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-      ../../modules/features/alacritty.nix
+    ../../modules/desktops/gnome/home-config.nix
+    ../../modules/features/alacritty.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
