@@ -13,7 +13,7 @@
       zed-editor
 
       # Neovim
-      inputs.nvim-config.nvim-config
+      inputs.nvim-config
     ];
   };
 }
