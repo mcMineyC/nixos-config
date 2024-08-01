@@ -7,7 +7,7 @@
       ../../modules/features/games.nix
       ../../modules/desktops/hyprland/hyprland.nix
       ../../modules/desktops/gnome/gnome.nix
-    ../../modules/features/alacritty.nix
+      ../../modules/features/alacritty.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;

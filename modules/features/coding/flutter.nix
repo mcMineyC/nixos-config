@@ -1,5 +1,5 @@
 { config, pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
+    config.environment.systemPackages = with pkgs; [
       flutter
       dart
     ];
