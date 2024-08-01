@@ -50,7 +50,7 @@
     ".config/neovim" = {
       source = inputs.nvim-config;
       recursive = true;
-    }
+    };
   };
 
   home.sessionVariables = {
