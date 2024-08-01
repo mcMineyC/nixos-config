@@ -8,10 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/features/coding/coding.nix
-      ../../modules/features/games.nix
-      ../../modules/desktops/hyprland/hyprland.nix
-      ../../modules/desktops/gnome/gnome.nix
       inputs.home-manager.nixosModules.default
     ];
 
