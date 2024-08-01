@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -13,16 +13,7 @@
       zed-editor
 
       # Neovim
-      neovim
-      tree-sitter
-      nodejs_22
-      nodePackages.npm
-      python3
-      python312Packages.pip
-      gccgo14
-      wl-clipboard-x11
-      wl-clipboard
-      unzip
+      inputs.nvim-config.nvim-config
     ];
   };
 }
