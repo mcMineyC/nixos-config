@@ -1,15 +1,15 @@
 { pkgs, config, ... }:
 
 {
-  
+  oteme = pkgs.orchis-theme.override { 
+    tweaks = ["macos" "dark"];
+  };
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.media-controls
     gnome-tweaks
     gtk-engine-murrine
-    pkgs.orchis-theme.override { 
-      tweaks = ["macos" "dark"];
-    }
+    otheme
   ];
   
   # Enable the X11 windowing system.
