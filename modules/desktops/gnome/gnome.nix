@@ -1,6 +1,10 @@
 { pkgs, config, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.media-controls
+  ]
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

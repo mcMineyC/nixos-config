@@ -9,6 +9,9 @@
       #VS Code
       vscode
 
+      # Zed
+      zed-editor
+
       # Neovim
       neovim
       tree-sitter
