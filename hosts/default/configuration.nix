@@ -69,8 +69,6 @@
     isNormalUser = true;
     description = "Jedi";
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
-    packages = with pkgs; [
-    ];
   };
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

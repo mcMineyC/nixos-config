@@ -10,15 +10,9 @@
     nvidia.modesetting.enable = true;
   };
   environment.systemPackages = with pkgs; [
-    waybar
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-      })
-    )
     ags
     swww
-    foot
   ];
-  # xdg.portal.enable = true;
+  xdg.portal.enable = true;
   # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }

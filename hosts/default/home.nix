@@ -54,6 +54,12 @@
     EDITOR = "nvim";
   };
 
+  programs.git = {
+    enable = true;
+    userEmail = "jedi.master@falconhosting.net";
+    userName = "mcMineyC";
+  };
+
   # programs.foot.enable = true;
   # programs.foot.settings = {
   #   main = {
