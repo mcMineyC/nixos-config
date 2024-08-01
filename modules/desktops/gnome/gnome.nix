@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.media-controls
+    gnomeExtensions.rectangle
     gnome-tweaks
     gtk-engine-murrine
     (pkgs.orchis-theme.override ({ 
