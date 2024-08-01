@@ -12,6 +12,8 @@
     nix-colors.url = "github:misterio77/nix-colors";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    nvim-config.url = "github:mcMineyC/nvim-config";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
