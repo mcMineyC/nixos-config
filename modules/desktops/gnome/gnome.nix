@@ -7,9 +7,9 @@
     gnomeExtensions.media-controls
     gnome-tweaks
     gtk-engine-murrine
-    pkgs.orchis-theme.override ({ 
-      tweaks = ["macos" "dark"];
-    })
+    (pkgs.orchis-theme.override ({ 
+      tweaks = ["macos" "black"];
+    }))
   ];
   
   # Enable the X11 windowing system.
