@@ -24,5 +24,5 @@
     packages = [
       "org.gnome.Extensions"
     ];
-  }
+  };
 }
