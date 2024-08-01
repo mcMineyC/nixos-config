@@ -6,7 +6,7 @@
       tweaks = ["macos" "dark"];
     };
   };
-  environment.systemPackages = with pkgs; [
+  config.environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.media-controls
     gnome-tweaks
