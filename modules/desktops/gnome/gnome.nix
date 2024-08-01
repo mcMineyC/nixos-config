@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.media-controls
-    gnome.gnome-tweaks
+    gnome-tweaks
   ];
   
   # Enable the X11 windowing system.
@@ -19,4 +19,10 @@
     layout = "us";
     variant = "";
   };
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "org.gnome.Extensions"
+    ];
+  }
 }
