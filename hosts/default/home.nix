@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    ../../modules/features/alacritty.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -11,8 +12,6 @@
   home.homeDirectory = "/home/jedi";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.packages = [
-    pkgs.hello
-
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     (pkgs.writeShellScriptBin "sys-rebuild" ''
@@ -52,45 +51,47 @@
     EDITOR = "nvim";
   };
 
-  programs.foot.enable = true;
-  programs.foot.settings = {
-    main = {
-      term = "xterm-256color";
+  # programs.foot.enable = true;
+  # programs.foot.settings = {
+  #   main = {
+  #     term = "xterm-256color";
 
-      font = "JetBrainsMono Nerd Font:size=11";
-      dpi-aware = "no";
-      pad = "0x0";
-      bold-text-in-bright = "no";
-    };
+  #     font = "JetBrainsMono Nerd Font:size=11";
+  #     dpi-aware = "no";
+  #     pad = "0x0";
+  #     bold-text-in-bright = "no";
+  #   };
 
-    scrollback.lines = 1000;
+  #   scrollback.lines = 1000;
 
-    colors = with config.colorScheme.pallette; {
-      alpha = 1;
-      foreground = "${base06}";
-      background = "${base00}";
-    };
+  #   colors = with config.colorScheme.palette; {
+  #     alpha = 1;
+  #     foreground = "${base06}";
+  #     background = "${base00}";
+  #     regular0 = "${base00}";
+  #     regular1 = "";
+  #   };
 
-    cursor = {
-      style = "beam";
-      blink = "no";
-      beam-thickness = 1.5;
-    };
+  #   cursor = {
+  #     style = "beam";
+  #     blink = "no";
+  #     beam-thickness = 1.5;
+  #   };
 
-    key-bindings = {
-      scrollback-up-page = "Page_Up";
-      scrollback-down-page = "Page_Down";
-      clipboard-copy = "Control+Shift+C";
-      clipboard-paste = "Control+Shift+V";
-      search-start = "Control+Shift+F";
-    };
+  #   key-bindings = {
+  #     scrollback-up-page = "Page_Up";
+  #     scrollback-down-page = "Page_Down";
+  #     clipboard-copy = "Control+Shift+C";
+  #     clipboard-paste = "Control+Shift+V";
+  #     search-start = "Control+Shift+F";
+  #   };
 
-    search-bindings = {
-      cancel = "Escape";
-      find-prev = "G";
-      find-next = "Shift+G";
-    };
-  };
+  #   search-bindings = {
+  #     cancel = "Escape";
+  #     find-prev = "G";
+  #     find-next = "Shift+G";
+  #   };
+  # };
 
   wayland.windowManager.hyprland = {
     enable = true;
