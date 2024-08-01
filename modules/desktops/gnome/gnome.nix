@@ -7,7 +7,7 @@
     gnomeExtensions.media-controls
     gnome-tweaks
     gtk-engine-murrine
-    pkgs.orchis-theme.overrideAttrs (finalAttrs: { 
+    pkgs.orchis-theme.override (finalAttrs: { 
       tweaks = ["macos" "dark"];
     })
   ];
