@@ -68,19 +68,8 @@
   users.users.jedi = {
     isNormalUser = true;
     description = "Jedi";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
-      neovim
-      tree-sitter
-      nodejs_22
-      nodePackages.npm
-      python3
-      python312Packages.pip
-      gccgo14
-      wl-clipboard-x11
-      wl-clipboard
-      unzip
-      foot
     ];
   };
   home-manager = {

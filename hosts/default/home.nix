@@ -11,10 +11,10 @@
   home.username = "jedi";
   home.homeDirectory = "/home/jedi";
   home.stateVersion = "23.11"; # Please read the comment before changing.
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-    (pkgs.writeShellScriptBin "sys-rebuild" ''
+    (writeShellScriptBin "sys-rebuild" ''
       #!/bin/bash
       if [ "$(pwd)" != "/home/jedi/Documents/nixos-config" ]; then
         cd /home/jedi/Documents/nixos-config
@@ -29,6 +29,8 @@
       echo "Done"
       sudo nixos-rebuild switch --flake /home/jedi/Documents/nixos-config#default
     '')
+
+    spotube
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
