@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  config.packageOverrides = pkgs: {
+  packageOverrides = pkgs: {
     orchis-theme = pkgs.orchis-theme.override { 
       tweaks = ["macos" "dark"];
     };
