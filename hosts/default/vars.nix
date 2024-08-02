@@ -1,4 +1,4 @@
 {
     uname = "jedi";
-    confPath = "/home/${username}/Documents/nixos-config";
+    confPath = "/home/${uname}/Documents/nixos-config";
 }

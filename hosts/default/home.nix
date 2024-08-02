@@ -11,15 +11,15 @@ in
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
-  home.username = "${vars.userame}";
-  home.homeDirectory = "/home/${vars.username}";
+  home.username = "${vars.uame}";
+  home.homeDirectory = "/home/${vars.uname}";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     (writeShellScriptBin "sys-rebuild" ''
       #!/bin/bash
-      if [ "$(pwd)" != "${vars.cconfPath}" ]; then
+      if [ "$(pwd)" != "${vars.confPath}" ]; then
         cd ${vars.confPath}
         echo "CDed to config dir"
       fi
