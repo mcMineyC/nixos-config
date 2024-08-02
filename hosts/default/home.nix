@@ -1,5 +1,8 @@
 { config, pkgs, inputs, ... }:
-
+let 
+    username = "jedi";
+    confPath = "/home/${vars.username}/Documents/nixos-config";
+in
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
@@ -7,10 +10,6 @@
     ../../modules/features/alacritty.nix
   ];
 
-  vars = {
-    username = "jedi";
-    confPath = "/home/${vars.username}/Documents/nixos-config";
-  };
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   home.username = "jedi";
