@@ -7,7 +7,7 @@
     ../../modules/features/alacritty.nix
   ];
 
-  username = "jedi";
+  let username = "jedi";
   configPath = "/home/${username}/Documents/nixos-config";
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
