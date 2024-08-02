@@ -92,6 +92,7 @@
     htop
     gparted
     google-chrome
+    caligula
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
