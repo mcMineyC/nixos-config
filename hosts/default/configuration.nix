@@ -91,6 +91,7 @@
     git
     htop
     gparted
+    google-chrome
   ];
 
   services.xserver.videoDrivers = ["nvidia"];

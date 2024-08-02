@@ -5,7 +5,6 @@
     inputs.nix-colors.homeManagerModules.default
     ../../modules/desktops/gnome/home-config.nix
     ../../modules/features/alacritty.nix
-    ./vars.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
