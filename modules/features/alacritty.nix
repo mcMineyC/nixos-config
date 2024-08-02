@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     alacritty
+    fish
   ];
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
