@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 let 
     username = "jedi";
-    confPath = "/home/${vars.username}/Documents/nixos-config";
+    confPath = "/home/${username}/Documents/nixos-config";
 in
 {
   imports = [
