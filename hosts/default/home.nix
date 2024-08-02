@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }:
 let 
-    username = "jedi";
-    confPath = "/home/${username}/Documents/nixos-config";
+  vars = import ./vars.nix;  
 in
 {
   imports = [
@@ -12,16 +11,16 @@ in
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
-  home.username = "${userame}";
-  home.homeDirectory = "/home/${username}";
+  home.username = "${vars.userame}";
+  home.homeDirectory = "/home/${vars.username}";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     (writeShellScriptBin "sys-rebuild" ''
       #!/bin/bash
-      if [ "$(pwd)" != "${cconfPath}" ]; then
-        cd ${confPath}
+      if [ "$(pwd)" != "${vars.cconfPath}" ]; then
+        cd ${vars.confPath}
         echo "CDed to config dir"
       fi
       currentGen=$(nix-env --list-generations | grep current | awk '{print $1}')
@@ -31,7 +30,7 @@ in
       git commit -m "Update on $(date), gen $((currentGen + 1))"
       git push
       echo "Done"
-      sudo nixos-rebuild switch --flake ${confPath}#default
+      sudo nixos-rebuild switch --flake ${vars.confPath}#default
     '')
 
     spotube
