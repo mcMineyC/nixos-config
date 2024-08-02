@@ -7,12 +7,11 @@
     ../../modules/features/alacritty.nix
   ];
 
-  let username = "jedi";
-  configPath = "/home/${username}/Documents/nixos-config";
+  configPath = "/home/jedi/Documents/nixos-config";
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
-  home.username = "${username}";
-  home.homeDirectory = "/home/${username}";
+  home.username = "jedi";
+  home.homeDirectory = "/home/jedi";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
