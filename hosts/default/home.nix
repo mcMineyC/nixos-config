@@ -7,7 +7,7 @@
     ../../modules/features/alacritty.nix
   ];
 
-  configPath = "/home/jedi/Documents/nixos-config";
+  confPath = "/home/jedi/Documents/nixos-config";
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   home.username = "jedi";
@@ -18,8 +18,8 @@
 
     (writeShellScriptBin "sys-rebuild" ''
       #!/bin/bash
-      if [ "$(pwd)" != "${configPath}" ]; then
-        cd ${configPath}
+      if [ "$(pwd)" != "${confPath}" ]; then
+        cd ${confPath}
         echo "CDed to config dir"
       fi
       currentGen=$(nix-env --list-generations | grep current | awk '{print $1}')
@@ -29,7 +29,7 @@
       git commit -m "Update on $(date), gen $((currentGen + 1))"
       git push
       echo "Done"
-      sudo nixos-rebuild switch --flake ${configPath}#default
+      sudo nixos-rebuild switch --flake ${confPath}#default
     '')
 
     spotube
