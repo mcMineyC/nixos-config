@@ -10,7 +10,7 @@
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
-  home.username = "${uame}";
+  home.username = "${uname}";
   home.homeDirectory = "/home/${vars.uname}";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
