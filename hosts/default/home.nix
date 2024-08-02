@@ -9,7 +9,7 @@
 
   vars = {
     username = "jedi";
-    confPath = "/home/${config.vars.username}/Documents/nixos-config";
+    confPath = "/home/${vars.username}/Documents/nixos-config";
   };
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
