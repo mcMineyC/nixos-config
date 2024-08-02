@@ -10,16 +10,16 @@
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
-  home.username = "${uname}";
-  home.homeDirectory = "/home/${vars.uname}";
+  home.username = "jedi";
+  home.homeDirectory = "/home/jedi";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     (writeShellScriptBin "sys-rebuild" ''
       #!/bin/bash
-      if [ "$(pwd)" != "${vars.confPath}" ]; then
-        cd ${vars.confPath}
+      if [ "$(pwd)" != "/home/jedi/Documents/nixos-config" ]; then
+        cd /home/jedi/Documents/nixos-config
         echo "CDed to config dir"
       fi
       currentGen=$(nix-env --list-generations | grep current | awk '{print $1}')
@@ -29,7 +29,7 @@
       git commit -m "Update on $(date), gen $((currentGen + 1))"
       git push
       echo "Done"
-      sudo nixos-rebuild switch --flake ${vars.confPath}#default
+      sudo nixos-rebuild switch --flake /home/jedi/Documents/nixos-config#default
     '')
 
     spotube
