@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    ../../modules/desktops/hyprland/home-config.nix
     ../../modules/desktops/gnome/home-config.nix
     ../../modules/features/alacritty.nix
   ];

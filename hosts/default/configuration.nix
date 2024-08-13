@@ -42,7 +42,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable CUPS to print documents.
