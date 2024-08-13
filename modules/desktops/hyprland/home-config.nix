@@ -10,6 +10,8 @@
           "$mod, B, exec, firefox"
           "$mod, F, exec, nautilus"
           "$mod, T, exec, alacritty"
+          "$mod, C, exec, google-chrome-stable"
+          "$mod, Shift, C, exec, code"
           ", Print, exec, grimblast copy area"
         ]
         ++ (
