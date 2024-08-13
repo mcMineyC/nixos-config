@@ -11,7 +11,7 @@
           "$mod, F, exec, nautilus"
           "$mod, T, exec, alacritty"
           "$mod, C, exec, google-chrome-stable"
-          "$mod, Shift, C, exec, code"
+          "$mod SHIFT, C, exec, code"
           ", Print, exec, grimblast copy area"
         ]
         ++ (
