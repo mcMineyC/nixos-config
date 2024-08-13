@@ -7,7 +7,9 @@
       "$mod" = "SUPER";
       bind =
         [
-          "$mod, F, exec, firefox"
+          "$mod, B, exec, firefox"
+          "$mod, F, exec, nautilus"
+          "$mod, T, exec, alacritty"
           ", Print, exec, grimblast copy area"
         ]
         ++ (
@@ -21,7 +23,7 @@
                   builtins.toString (x + 1 - (c * 10));
               in [
                 "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                "$mod ALT, ${ws}, movetoworkspace, ${toString (x + 1)}"
               ]
             )
             10)
