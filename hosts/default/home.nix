@@ -9,7 +9,7 @@
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
-  vars = import ./vars.nix { inherit uname confPath; };
+  vars = import ./vars.nix;
   home.username = vars.uname;
   home.homeDirectory = "/home/${vars.uname}";
 
