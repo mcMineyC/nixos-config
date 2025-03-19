@@ -18,7 +18,7 @@ in
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
-    nerdfonts.jetbrains-mono
+    nerd-fonts.jetbrains-mono
 
     (writeShellScriptBin "sys-rebuild" ''
       #!/bin/bash
