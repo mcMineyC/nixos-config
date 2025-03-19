@@ -11,6 +11,10 @@
   in
   {
     enable = true;
-    theme = spicePkgs.themes.catppuccin;
+    enabledExtensions = with spicepkgs.extensions; [
+      fullAppDisplay
+      adblock
+    ]; 
+    theme = spicePkgs.themes.ziro;
   };
 }
