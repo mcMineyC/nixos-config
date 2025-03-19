@@ -14,6 +14,10 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     nvim-config.url = "github:mcMineyC/nvim-config";
+    
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
