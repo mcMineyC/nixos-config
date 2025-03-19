@@ -9,13 +9,11 @@
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
-  let
-    username = import ./vars.nix { inherit uname confPath; };
-  in {
+  username = import ./vars.nix { inherit uname confPath; };
     home.username = uname;
     home.homeDirectory = "/home/${uname}";
 
-    home.stateVersion = "23.11"; # Please read the comment before changing.
+    home.stateVersion = "24.11"; # Please read the comment before changing.
     home.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
@@ -37,7 +35,6 @@
 
       spotube
     ];
-  };
 
   home.file = {
     ".config/nvim" = {
