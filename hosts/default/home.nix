@@ -45,6 +45,9 @@ in
       source = inputs.nvim-config;
       recursive = true;
     };
+    ".config/nixpkgs/config.nix".text = ''
+      { allowUnfree = true; }
+    ''; 
   };
 
   home.sessionVariables = {
