@@ -1,5 +1,9 @@
 { config, pkgs, inputs, ... }:
 
+let
+  vars = import ./vars.nix;
+in
+
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
@@ -9,7 +13,6 @@
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
-  vars = import ./vars.nix;
   home.username = vars.uname;
   home.homeDirectory = "/home/${vars.uname}";
 
