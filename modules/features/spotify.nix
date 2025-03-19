@@ -11,7 +11,7 @@
   in
   {
     enable = true;
-    enabledExtensions = with spicepkgs.extensions; [
+    enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       adblock
     ]; 
