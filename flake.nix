@@ -10,17 +10,14 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
-
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-
     nvim-config.url = "github:mcMineyC/nvim-config";
-    
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
-
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, zen-browser, ... }@inputs: {
     nixosConfigurations = {
       default = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};

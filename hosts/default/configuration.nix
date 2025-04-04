@@ -93,6 +93,7 @@
     gparted
     google-chrome
     caligula
+    inputs.zen-browser.packages."${system}".specific
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
