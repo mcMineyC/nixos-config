@@ -34,7 +34,7 @@ in
       git commit -m "Update on $(date), gen $((currentGen + 1))"
       git push
       echo "Done"
-      sudo NIXPKGS_ALLOW_UNFREE="1" nixos-rebuild switch --flake /home/jedi/Documents/nixos-config#default --impure
+      sudo NIXPKGS_ALLOW_UNFREE="1" nixos-rebuild switch  --impure --flake /home/jedi/Documents/nixos-config#default
     '')
 
     spotube
