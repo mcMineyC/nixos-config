@@ -70,6 +70,7 @@
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
   home-manager = {
+    useGlobalPkgs = true;
     extraSpecialArgs = {inherit inputs;};
     users = {
       "jedi" = import ./home.nix;
