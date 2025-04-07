@@ -17,7 +17,6 @@
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     wallpaper = {
       url = "file+https://forkleserver.mooo.com/blogAssets/wallpapers/macos/monterey/5pm.jpg";
-      hash = "aaaaaaa";
     };
   };
 
