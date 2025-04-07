@@ -18,7 +18,7 @@
     wallpaper = {
       url = "file+https://forkleserver.mooo.com/blogAssets/wallpapers/macos/monterey/5pm.jpg";
       hash = "aaaaaaa";
-    }
+    };
   };
 
   outputs = { self, nixpkgs, zen-browser, ... }@inputs: {
