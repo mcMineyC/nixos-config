@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, system, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -29,7 +29,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -55,15 +54,12 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jedi = {
     isNormalUser = true;
     description = "Jedi";
@@ -88,7 +84,6 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
-  #fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
   environment.systemPackages = with pkgs; [
     wget
     htop
@@ -96,7 +91,7 @@
     git
     htop
     gparted
-    google-chrome
+    chromium
     caligula
     psmisc
   ];
