@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, system, ... }:
+{ pkgs, config, inputs, ... }:
 
 {
   home.packages = [
