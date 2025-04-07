@@ -71,7 +71,7 @@
   };
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs; system;};
+    extraSpecialArgs = {inherit inputs; system = system;};
     users = {
       "jedi" = import ./home.nix;
     };
