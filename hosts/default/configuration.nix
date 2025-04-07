@@ -74,7 +74,7 @@
     extraSpecialArgs = {
       inherit inputs;
       # inherit lib;
-      # inherit system;
+      inherit system;
     };
     users = {
       "jedi" = import ./home.nix;
