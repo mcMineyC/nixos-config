@@ -5,11 +5,8 @@
 { config, pkgs, inputs, ... }:
 
 let
-  wallpaper = builtins.fetchurl {
-    url = "https://forkleserver.mooo.com/blogAssets/wallpapers/macos/monterey/5pm.jpg";
-  };
+  vars = import ./vars.nix;
 in
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -18,7 +15,7 @@ in
       ../../modules/features/coding/coding.nix
       ../../modules/features/games.nix
       ../../modules/desktops/hyprland/hyprland.nix
-      ../../modules/desktops/gnome/gnome.nix
+      (import ../../modules/desktops/gnome/gnome.nix {wallpaper = vars.wallpaper;})
     ];
 
   # Bootloader.
