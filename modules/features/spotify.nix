@@ -16,7 +16,7 @@
       adblock
       addToQueueTop
     ]; 
-    enabledCustomApps = with spicePkgs.customApps; [
+    enabledCustomApps = with spicePkgs.apps; [
       marketplace
     ];
     theme = spicePkgs.themes.ziro;
