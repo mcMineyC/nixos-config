@@ -2,7 +2,7 @@
 
 {
   home.packages = [
-    inputs.zen-browser.packages."x86_64_linux".specific
+    inputs.zen-browser.packages."x86_64-linux".specific
   ];
   xdg.mimeApps = {
     enable = true;
