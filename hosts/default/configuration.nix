@@ -95,6 +95,7 @@
     google-chrome
     caligula
     inputs.zen-browser.packages."${system}".specific
+    psmisc
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
