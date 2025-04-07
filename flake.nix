@@ -15,10 +15,6 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
-    wallpaper = {
-      url = "file+https://forkleserver.mooo.com/blogAssets/wallpapers/macos/monterey/5pm.jpg";
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, zen-browser, ... }@inputs: {

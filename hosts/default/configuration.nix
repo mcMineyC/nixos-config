@@ -4,6 +4,12 @@
 
 { config, pkgs, inputs, ... }:
 
+let
+  wallpaper = builtins.fetchurl {
+    url = "https://forkleserver.mooo.com/blogAssets/wallpapers/macos/monterey/5pm.jpg";
+  };
+in
+
 {
   imports =
     [ # Include the results of the hardware scan.
