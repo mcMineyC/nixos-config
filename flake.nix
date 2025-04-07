@@ -20,7 +20,7 @@
   outputs = { self, nixpkgs, zen-browser, ... }@inputs: {
     nixosConfigurations = {
       default = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs; inherit system;};
         modules = [
           inputs.nix-flatpak.nixosModules.nix-flatpak
           ./hosts/default/configuration.nix
