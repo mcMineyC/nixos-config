@@ -14,7 +14,11 @@
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       adblock
+      addToQueueTop
     ]; 
+    enabledCustomApps = with spicePkgs.customApps; [
+      marketplace
+    ];
     theme = spicePkgs.themes.ziro;
   };
 }
