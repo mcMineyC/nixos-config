@@ -71,6 +71,7 @@
       inherit inputs;
       # inherit lib;
     };
+    backupFileExtension = ".hom-manager..bak";
     users = {
       "jedi" = import ./home.nix;
     };
