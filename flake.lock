@@ -159,6 +159,7 @@
         "nixpkgs": "nixpkgs",
         "nvim-config": "nvim-config",
         "spicetify-nix": "spicetify-nix",
+        "wallpaper": "wallpaper",
         "zen-browser": "zen-browser"
       }
     },
@@ -196,6 +197,18 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "wallpaper": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-J1JmwaWc3mdHQmx8ojnZPT3a/MXTNYQ1k149dyfsyqM=",
+        "type": "file",
+        "url": "https://forkleserver.mooo.com/blogAssets/wallpapers/macos/monterey/5pm.jpg"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://forkleserver.mooo.com/blogAssets/wallpapers/macos/monterey/5pm.jpg"
       }
     },
     "zen-browser": {

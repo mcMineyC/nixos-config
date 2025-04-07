@@ -32,9 +32,8 @@ with lib.hm.gvariant;
     };
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
-        picture-uri = "file:${inputs.wallpaper.path}";
-        picture-uri-dark = "file:${inputs.wallpaper.path}";
-      };
+      picture-uri = "file:${inputs.wallpaper.path}";
+      picture-uri-dark = "file:${inputs.wallpaper.path}";
     };
   };
 }
