@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 
 with lib.hm.gvariant;
 
@@ -29,6 +29,12 @@ with lib.hm.gvariant;
       switch-to-application-8 = [];
       switch-to-application-9 = [];
       switch-to-application-10 = [];
+    };
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+        picture-uri = "file:${inputs.wallpaper.path}";
+        picture-uri-dark = "file:${inputs.wallpaper.path}";
+      };
     };
   };
 }
