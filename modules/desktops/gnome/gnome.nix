@@ -1,4 +1,4 @@
-{ wallpaper }: { pkgs, config, ... }:
+{ pkgs, config, ... }:
 
 {
   

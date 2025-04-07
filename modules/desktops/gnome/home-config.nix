@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
-
+{wallpaper, ...}: { config, pkgs, ... }:
 
 {
   imports = [
-    ./dconf-settings.nix
+    (import ./dconf-settings.nix {wallpaper = wallpaper;})
   ];
   gtk = {
     enable = true;
