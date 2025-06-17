@@ -11,7 +11,7 @@
   };
   environment.systemPackages = with pkgs; [
     ags
-    swww
+    hyprpaper
     mako
   ];
   xdg.portal.enable = true;

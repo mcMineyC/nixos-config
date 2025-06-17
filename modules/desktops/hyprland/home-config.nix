@@ -6,9 +6,11 @@
     settings = {
       monitor = "eDP-1,1920x1080@60,0x0,0.5";
       "$mod" = "SUPER";
+      preload = "${wallpaper}";
+      wallpaper = ",${wallpaper}";
       exec-once = [
-        "swww init"
-        "swww img ${wallpaper} --transition-type fade --transition-duration 1"
+        # "swww init"
+        # "swww img ${wallpaper} --transition-type fade --transition-duration 1"
         # "makoctl set-mode default"
         # "dunst"
         # "blueman-applet"
