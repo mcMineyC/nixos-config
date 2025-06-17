@@ -1,4 +1,4 @@
-{wallpaper, ...}: { lib, inputs, ... }:
+{wallpaper, ...}: { lib, ... }:
 
 with lib.hm.gvariant;
 

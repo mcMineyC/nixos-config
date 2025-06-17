@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{wallpaper, ...}: { config, pkgs, inputs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -6,6 +6,19 @@
     settings = {
       monitor = "eDP-1,1920x1080@60,0x0,0.5";
       "$mod" = "SUPER";
+      exec-once = [
+        "swww init"
+        "swww img ${wallpaper} --transition-type fade --transition-duration 1"
+        # "makoctl set-mode default"
+        # "dunst"
+        # "blueman-applet"
+        # "nm-applet"
+        # "pasystray"
+        # "wl-paste -t text/plain -t text/html -t image/png --watch cliphist add"
+        # "gnome-keyring-daemon --start --components=secrets"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "makoctl set-mode default"
+      ]
       bind =
         [
           "$mod, B, exec, zen"

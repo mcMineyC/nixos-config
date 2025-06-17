@@ -7,7 +7,7 @@ in
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ../../modules/desktops/hyprland/home-config.nix
+    (import ../../modules/desktops/hyprland/home-config.nix {wallpaper = vars.wallpaper;})
     (import ../../modules/desktops/gnome/home-config.nix {wallpaper = vars.wallpaper;})
     ../../modules/features/zen.nix
     ../../modules/features/spotify.nix
