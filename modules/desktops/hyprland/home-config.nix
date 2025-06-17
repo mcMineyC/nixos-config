@@ -28,6 +28,7 @@
           "$mod, T, exec, alacritty"
           # "$mod, C, exec, google-chrome-stable"
           "$mod SHIFT, C, exec, code"
+          "$mod Q, killactive"
           ", Print, exec, grimblast copy area"
         ]
         ++ (
