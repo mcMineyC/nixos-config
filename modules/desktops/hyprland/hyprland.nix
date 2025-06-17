@@ -18,13 +18,13 @@
 
   programs.hyprland.enable = true;
 
-  systemd.user.services.swww-daemon = {
-    enable = true;
-    description = "Simple Wayland Wallpaper Daemon";
-    serviceConfig = {
-      ExecStart = "${pkgs.swww}/bin/swww-daemon";
-      Restart = "always";
-    };
-  };
+  # systemd.user.services.swww-daemon = {
+  #   enable = true;
+  #   description = "Simple Wayland Wallpaper Daemon";
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.swww}/bin/swww-daemon";
+  #     Restart = "always";
+  #   };
+  # };
   # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }
