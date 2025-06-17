@@ -6,8 +6,8 @@
     settings = {
       monitor = "eDP-1,1920x1080@60,0x0,1";
       "$mod" = "SUPER";
-      preload = "${wallpaper}";
-      wallpaper = ",${wallpaper}";
+      # preload = "${wallpaper}";
+      # wallpaper = ",${wallpaper}";
       exec-once = [
         # "swww init"
         # "swww img ${wallpaper} --transition-type fade --transition-duration 1"
@@ -28,7 +28,7 @@
           "$mod, T, exec, alacritty"
           # "$mod, C, exec, google-chrome-stable"
           "$mod SHIFT, C, exec, code"
-          "$mod Q, killactive"
+          "$mod, Q, killactive"
           ", Print, exec, grimblast copy area"
         ]
         ++ (
@@ -54,7 +54,7 @@
     settings = {
       monitors = {
         eDP-1 = {
-          path = wallpaper;
+          path = "${wallpaper}";
           mode = "fill";
           interval = 300;
           transition = "fade";
