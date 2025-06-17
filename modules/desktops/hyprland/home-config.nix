@@ -48,4 +48,18 @@
         );
     };
   };
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      monitors = {
+        eDP-1 = {
+          path = wallpaper;
+          mode = "fill";
+          interval = 300;
+          transition = "fade";
+          transitionDuration = 1;
+        };
+      };
+    };
+  };
 }
