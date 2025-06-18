@@ -70,22 +70,22 @@
     hypridle = {
       enable = true;
       settings = {
-        "$lock_cmd" = pidof hyprlock || hyprlock;
-        "$suspend_cmd" = systemctl suspend || loginctl suspend;
+        "$lock_cmd" = "pidof hyprlock || hyprlock";
+        "$suspend_cmd" = "systemctl suspend || loginctl suspend";
 
         general = {
             lock_cmd = "$lock_cmd";
-            before_sleep_cmd = loginctl lock-session;
+            before_sleep_cmd = "loginctl lock-session";
         };
         listener = [
           {
             timeout = 300; # 5mins
-            on-timeout = loginctl lock-session;
+            on-timeout = "loginctl lock-session";
           }
           {
             timeout = 600; # 10mins
-            on-timeout = hyprctl dispatch dpms off;
-            on-resume = hyprctl dispatch dpms on;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
           }
           {
             timeout = 900; # 15mins
