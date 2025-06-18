@@ -15,7 +15,7 @@
         no_border_on_floating = true;
       };
       decoration = {
-        rounding = 8;
+        rounding = 16;
         rounding_power = 6;
         blur = {
           enabled = true;
