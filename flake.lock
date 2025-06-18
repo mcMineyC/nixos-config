@@ -180,11 +180,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1750213887,
-        "narHash": "sha256-YYO5ksW2HgpslralgvjPIKHr0rucPmIDRmYWZzycUxA=",
+        "lastModified": 1750214307,
+        "narHash": "sha256-cpBkYT+Cto6Qo26zbYOo96egrH48Lc0yqcdJUQcG5s8=",
         "owner": "mcMineyC",
         "repo": "quickshell-config",
-        "rev": "7cf436c7856aa458c26a4998f6fa807ae07a9c9a",
+        "rev": "7d23ebd8e51b8d82f9a373b6b3516e12db6661a4",
         "type": "github"
       },
       "original": {
