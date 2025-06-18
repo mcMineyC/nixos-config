@@ -10,8 +10,8 @@
     };
 
     nvim-config.url = "github:mcMineyC/nvim-config";
-    quickshell-config.path = "git+file:///home/jedi/Documents/quickshell-config";
-    # quickshell-config.url = "github:mcMineyC/quickshell-config";
+    # quickshell-config.path = "git+file:///home/jedi/Documents/quickshell-config";
+    quickshell-config.url = "github:mcMineyC/quickshell-config";
     quickshell-config.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-colors.url = "github:misterio77/nix-colors";
