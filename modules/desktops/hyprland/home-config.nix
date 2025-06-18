@@ -106,15 +106,15 @@
         "$font_family_clock" = "Rubik Light";
         "$font_material_symbols" = "Material Symbols Rounded";
 
-        background {
+        background = {
             color = "rgba(181818FF)";
             # path = {{ SWWW_WALL }}
             
             # path = screenshot
             # blur_size = 15
             # blur_passes = 4
-        }
-        input-field {
+        };
+        input-field = {
             monitor = "";
             size = "250, 50";
             outline_thickness = 2;
@@ -128,9 +128,10 @@
             position = "0, 20";
             halign = "center";
             valign = "center";
-        }
+        };
 
-        label { # Caps Lock Warning
+        label = [
+          { # Caps Lock Warning
             monitor = "";
             text = "cmd[update:250] \${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprlock/check-capslock.sh";
             color = "$text_color";
@@ -139,10 +140,10 @@
             position = "0, -25";
             halign = "center";
             valign = "center";
-        }
+          }
 
 
-        label { # Clock
+          { # Clock
             monitor = "";
             text = "$TIME";
             color = "$text_color";
@@ -152,8 +153,8 @@
             position = "0, 300";
             halign = "center";
             valign = "center";
-        }
-        label { # Date
+          }
+          { # Date
             monitor = "";
             text = ''cmd[update:5000] date +"%A, %B %d"'';
             color = "$text_color";
@@ -163,9 +164,9 @@
             position = "0, 240";
             halign = "center";
             valign = "center";
-        }
+          }
 
-        label { # User
+          { # User
             monitor = "";
             text = "    $USER";
             color = "$text_color";
@@ -178,9 +179,9 @@
             position = "0, 50";
             halign = "center";
             valign = "bottom";
-        }
+          }
 
-        label { # Status
+          { # Status
             monitor = "";
             text = "cmd[update:5000] \${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprlock/status.sh";
             color = "$text_color";
@@ -190,7 +191,8 @@
             position = "30, -30";
             halign = "left";
             valign = "top";
-        }
+          }
+        ];
       };
     };
   };
