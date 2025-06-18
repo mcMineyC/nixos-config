@@ -93,7 +93,7 @@
           }
 
         ];
-      }
+      };
     };
     hyprlock = {
       enable = true;
