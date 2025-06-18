@@ -9,8 +9,17 @@
       # preload = "${wallpaper}";
       # wallpaper = ",${wallpaper}";
       general = {
+        gaps_in = 5;
+        gaps_out = 10;
         border_size = 0;
         no_border_on_floating = true;
+      };
+      decoration = {
+        rounding = 8;
+        rounding_power = 6;
+        blur = {
+          enabled = true;
+        };
       };
       exec-once = [
         # "swww init"
