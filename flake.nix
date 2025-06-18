@@ -9,18 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      # remove ?ref=v0.1.0 to track the master branch
-      url = "git+https://github.com/quickshell-mirror/quickshell";
-
-      # THIS IS IMPORTANT
-      # Mismatched system dependencies will lead to crashes and other issues.
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nvim-config.url = "github:mcMineyC/nvim-config";
+    quickshell-config.url = "github:mcMineyC/quickshell-config";
 
     nix-colors.url = "github:misterio77/nix-colors";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    nvim-config.url = "github:mcMineyC/nvim-config";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
