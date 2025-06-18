@@ -2,7 +2,7 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable/9e83b64f727c88a7711a2c463a7b16eedb69a84c";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,8 +10,9 @@
     };
 
     nvim-config.url = "github:mcMineyC/nvim-config";
-    quickshell-config.url = "github:mcMineyC/quickshell-config";
-    # quickshell-config.inputs.nixpkgs.follows = "nixpkgs";
+    quickshell-config.path = "path:/home/jedi/Documents/quickshell-config";
+    # quickshell-config.url = "github:mcMineyC/quickshell-config";
+    quickshell-config.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-colors.url = "github:misterio77/nix-colors";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
