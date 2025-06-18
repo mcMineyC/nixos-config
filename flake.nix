@@ -11,7 +11,7 @@
 
     quickshell = {
       # remove ?ref=v0.1.0 to track the master branch
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?ref=v0.1.0";
+      url = "git+https://github.com/quickshell-mirror/quickshell";
 
       # THIS IS IMPORTANT
       # Mismatched system dependencies will lead to crashes and other issues.
