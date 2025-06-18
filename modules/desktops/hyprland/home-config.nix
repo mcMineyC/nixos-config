@@ -95,11 +95,11 @@
         ];
       };
     };
-    hyprlock = {
-      enable = true;
-      settings = {
+    # hyprlock = {
+    #   enable = true;
+    #   settings = {
         
-      };
-    };
+    #   };
+    # };
   };
 }
