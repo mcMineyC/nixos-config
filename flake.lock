@@ -119,6 +119,22 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1750134718,
+        "narHash": "sha256-v263g4GbxXv87hMXMCpjkIxd/viIF7p3JpJrwgKdNiI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1743448293,
         "narHash": "sha256-bmEPmSjJakAp/JojZRrUvNcDX2R5/nuX6bm+seVaGhs=",
         "owner": "nixos",
@@ -154,6 +170,7 @@
     "quickshell": {
       "inputs": {
         "nixpkgs": [
+          "quickshell-config",
           "nixpkgs"
         ]
       },
@@ -171,6 +188,25 @@
         "url": "https://github.com/quickshell-mirror/quickshell"
       }
     },
+    "quickshell-config": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3",
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1750213004,
+        "narHash": "sha256-tRMlFKJavY14V5Dg/V3uIwOpot8gWmj6n9zO16bZTI4=",
+        "owner": "mcMineyC",
+        "repo": "quickshell-config",
+        "rev": "3db85dddb2c815709af320f04967e4a3cd202608",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mcMineyC",
+        "repo": "quickshell-config",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -178,7 +214,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
         "nvim-config": "nvim-config",
-        "quickshell": "quickshell",
+        "quickshell-config": "quickshell-config",
         "spicetify-nix": "spicetify-nix",
         "zen-browser": "zen-browser"
       }
@@ -221,7 +257,7 @@
     },
     "zen-browser": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1727721329,
