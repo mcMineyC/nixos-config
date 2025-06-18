@@ -13,6 +13,7 @@
     ags
     hyprpaper
     mako
+    wl-paste
   ];
   xdg.portal.enable = true;
 

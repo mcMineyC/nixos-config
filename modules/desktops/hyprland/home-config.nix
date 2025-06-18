@@ -10,6 +10,7 @@
       # wallpaper = ",${wallpaper}";
       general = {
         border_size = 0;
+        no_border_on_floating = true;
       };
       exec-once = [
         # "swww init"
@@ -36,8 +37,8 @@
           # "$mod, C, exec, google-chrome-stable"
           "$mod SHIFT, C, exec, code"
           "$mod, Q, killactive"
-          "$mod ALT, D, fullscreen 0"
-          "$mod ALT, F, fullscreen 1"
+          "$mod ALT, D, fullscreen, 0"
+          "$mod ALT, F, fullscreen, 1"
           ", Print, exec, grimblast copy area"
         ]
         ++ (
@@ -58,11 +59,44 @@
         );
     };
   };
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = "${wallpaper}";
-      wallpaper = "eDP-1,${wallpaper}";
+  services = {
+    hyprpaper = {
+      enable = true;
+      settings = {
+        preload = "${wallpaper}";
+        wallpaper = "eDP-1,${wallpaper}";
+      };
     };
-  };
+    hypridle = {
+      enable = true;
+      settings = {
+        "$lock_cmd" = pidof hyprlock || hyprlock;
+        "$suspend_cmd" = systemctl suspend || loginctl suspend;
+
+        general {
+            lock_cmd = "$lock_cmd";
+            before_sleep_cmd = loginctl lock-session;
+        };
+
+        listener {
+            timeout = 300; # 5mins
+            on-timeout = loginctl lock-session;
+        };
+
+        listener {
+            timeout = 600; # 10mins
+            on-timeout = hyprctl dispatch dpms off;
+            on-resume = hyprctl dispatch dpms on;
+        };
+
+        listener {
+            timeout = 900; # 15mins
+            on-timeout = "$suspend_cmd";
+        }
+      }
+    };
+    hyprlock = {
+      enable = true;
+    }
+  }
 }
