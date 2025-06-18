@@ -16,7 +16,7 @@
       };
       decoration = {
         rounding = 16;
-        rounding_power = 6;
+        rounding_power = 2;
         blur = {
           enabled = true;
         };
