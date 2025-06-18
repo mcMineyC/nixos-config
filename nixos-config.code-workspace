@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../quickshell-config"
+		},
+		{
+			"path": "../nvim-config"
 		}
 	],
 	"settings": {}
