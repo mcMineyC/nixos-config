@@ -48,7 +48,50 @@ in
     };
     ".config/nixpkgs/config.nix".text = ''
       { allowUnfree = true; }
-    ''; 
+    '';
+
+    ".config/hypr/hyprlock/check-capslock.sh".text = ''
+      #!/bin/env bash
+
+      MAIN_KB_CAPS=$(hyprctl devices | grep -B 6 "main: yes" | grep "capsLock" | head -1 | awk '{print $2}')
+
+      if [ "$MAIN_KB_CAPS" = "yes" ]; then
+          echo "Caps Lock active"
+      else
+          echo ""
+      fi
+    '';
+    ".config/hypr/hyprlock/status.sh".text = ''
+      #!/usr/bin/env bash
+
+      ############ Variables ############
+      enable_battery=false
+      battery_charging=false
+
+      ####### Check availability ########
+      for battery in /sys/class/power_supply/*BAT*; do
+        if [[ -f "$battery/uevent" ]]; then
+          enable_battery=true
+          if [[ $(cat /sys/class/power_supply/*/status | head -1) == "Charging" ]]; then
+            battery_charging=true
+          fi
+          break
+        fi
+      done
+
+      ############# Output #############
+      if [[ $enable_battery == true ]]; then
+        if [[ $battery_charging == true ]]; then
+          echo -n "(+) "
+        fi
+        echo -n "$(cat /sys/class/power_supply/*/capacity | head -1)"%
+        if [[ $battery_charging == false ]]; then
+          echo -n " remaining"
+        fi
+      fi
+
+      echo
+    '';
   };
 
   home.sessionVariables = {
