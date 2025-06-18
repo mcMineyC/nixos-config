@@ -12,8 +12,10 @@
   environment.systemPackages = with pkgs; [
     ags
     hyprpaper
+    hypridle
+    hyprlock
     mako
-    wl-paste
+    wl-clipboard
   ];
   xdg.portal.enable = true;
 
