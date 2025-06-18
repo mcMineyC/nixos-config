@@ -8,6 +8,9 @@
       "$mod" = "SUPER";
       # preload = "${wallpaper}";
       # wallpaper = ",${wallpaper}";
+      general = {
+        border_size = 0;
+      };
       exec-once = [
         # "swww init"
         # "swww img ${wallpaper} --transition-type fade --transition-duration 1"
@@ -33,6 +36,8 @@
           # "$mod, C, exec, google-chrome-stable"
           "$mod SHIFT, C, exec, code"
           "$mod, Q, killactive"
+          "$mod ALT, D, fullscreen 0"
+          "$mod ALT, F, fullscreen 1"
           ", Print, exec, grimblast copy area"
         ]
         ++ (
