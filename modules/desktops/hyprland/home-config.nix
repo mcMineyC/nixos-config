@@ -21,6 +21,10 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "makoctl set-mode default"
       ];
+      bindm = [
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
+      ];
       bind =
         [
           "$mod, B, exec, zen"
