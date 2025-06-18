@@ -9,6 +9,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      # remove ?ref=v0.1.0 to track the master branch
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?ref=v0.1.0";
+
+      # THIS IS IMPORTANT
+      # Mismatched system dependencies will lead to crashes and other issues.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-colors.url = "github:misterio77/nix-colors";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvim-config.url = "github:mcMineyC/nvim-config";
